@@ -23,13 +23,11 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         .subtitle {
             font-style: italic;
             color: #ffffff;
             opacity: 0.9;
-            font-size: 1.2em;
         }
         .container {
             padding: 40px 20px;
@@ -45,40 +43,8 @@
             border-radius: 50px;
             display: inline-block;
             margin: 30px 0;
-            transition: 0.3s;
-            box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
             width: 85%;
             max-width: 400px;
-            font-size: 1.1em;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-gold:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 204, 0, 0.7);
-        }
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
-        .feature-item {
-            flex: 1;
-            min-width: 280px;
-            padding: 25px;
-            background: #161616;
-            border-radius: 15px;
-            border: 1px solid #333;
-            color: white;
-        }
-        .feature-item b { color: #f4d03f; display: block; margin-bottom: 10px; font-size: 1.2em; }
-        
-        /* Stile per il Traduttore */
-        #google_translate_element {
-            padding: 10px;
-            background: #1a1a1a;
         }
     </style>
 </head>
@@ -92,26 +58,10 @@
 </div>
 
 <div class="container">
-    
     <a href="catalogo_candele.pdf_20260309_191151_0000-compressed (1).pdf" target="_blank" class="btn-gold">
         🔥 SFOGLIA IL CATALOGO DELLE FIAMME (PDF) 🔥
     </a>
-
-    <div class="features">
-        <div class="feature-item">
-            <b>DESIGN ITALIANO</b>
-            Creazioni ispirate all'armonia e alla bellezza eterna, come le nostre iconiche "Dee".
-        </div>
-        <div class="feature-item">
-            <b>ECO-SOSTENIBILITÀ</b>
-            Materiali di pregio e rispetto per l'ambiente per un lusso consapevole.
-        </div>
-    </div>
-
-    <div style="margin-top: 60px; color: #555; font-size: 0.9em;">
-        <p>© 2026 Victor Milano - Manifestazione Fisica</p>
-        <p>Codice Sorgente X</p>
-    </div>
+    <p>© 2026 Victor Milano - Codice Sorgente X</p>
 </div>
 
 <script>
