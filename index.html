@@ -3,34 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Milano Candles | Manifestazione Fisica</title>
+    <title>Victor Milano Candles | Griglia Cristallina</title>
     <style>
-        body { background-color: #0d0d0d; color: #f4d03f; font-family: 'Georgia', serif; text-align: center; margin: 0; padding: 0; overflow-x: hidden; }
-        
-        .welcome-flame { padding: 40px 0 10px 0; background: radial-gradient(circle at center, #222 0%, #0d0d0d 70%); }
-        .flame { width: 30px; height: 30px; background: linear-gradient(45deg, #ff9900, #ffcc00); border-radius: 80% 0 55% 50% / 55% 0 80% 50%; margin: 0 auto; transform: rotate(-45deg); box-shadow: 0 0 30px 10px rgba(255, 153, 0, 0.7); animation: flame-flicker 1.5s infinite alternate ease-in-out; }
-        @keyframes flame-flicker { 0% { transform: rotate(-45deg) scale(1); } 100% { transform: rotate(-45deg) scale(1.1) translateY(-3px); } }
-        .candle-base { width: 12px; height: 40px; background: #1a1a1a; margin: -5px auto 0 auto; border-radius: 3px; }
+        /* SFONDO CELESTE ANGELICO CON GRIGLIA */
+        body { 
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+            background-attachment: fixed;
+            color: #1a237e; 
+            font-family: 'Georgia', serif; 
+            text-align: center; 
+            margin: 0; padding: 0; 
+            overflow-x: hidden; 
+        }
 
-        .header { padding: 20px 20px 40px 20px; }
-        h1 { font-size: 2.3em; letter-spacing: 4px; text-transform: uppercase; margin: 0; }
-        .subtitle { font-style: italic; color: #ffffff; opacity: 0.8; margin-top: 10px; }
+        /* EFFETTO GRIGLIA CRISTALLINA */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* LA CANDELA SACRA */
+        .welcome-flame { padding: 50px 0 20px 0; }
+        .flame { 
+            width: 25px; height: 35px; 
+            background: linear-gradient(to bottom, #ffffff, #fff176); 
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            margin: 0 auto; 
+            box-shadow: 0 0 40px 15px rgba(255, 255, 255, 0.9); 
+            animation: divine-pulse 2s infinite ease-in-out; 
+        }
+        @keyframes divine-pulse { 
+            0%, 100% { transform: scale(1); opacity: 0.8; filter: blur(1px); }
+            50% { transform: scale(1.2); opacity: 1; filter: blur(0px); }
+        }
+        .candle-base { 
+            width: 10px; height: 45px; 
+            background: linear-gradient(to right, #e0e0e0, #ffffff); 
+            margin: 5px auto; border-radius: 2px; 
+        }
+
+        .header { padding: 20px; }
+        h1 { font-size: 2.1em; letter-spacing: 5px; text-transform: uppercase; color: #0d47a1; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+        .subtitle { font-style: italic; color: #1565c0; opacity: 0.9; margin-top: 10px; font-weight: bold; }
         
         .container { padding: 20px; max-width: 900px; margin: auto; }
         
-        .btn-gold { background: linear-gradient(45deg, #ff9900, #ffcc00); color: black; padding: 20px; text-decoration: none; font-weight: bold; border-radius: 50px; display: inline-block; margin: 20px 0; width: 85%; max-width: 400px; box-shadow: 0 0 20px rgba(255, 153, 0, 0.5); transition: 0.3s; border: none; font-size: 1.1em; }
-        .btn-gold:hover { transform: scale(1.05); }
+        /* BOTTONE CRISTALLINO */
+        .btn-divine { 
+            background: linear-gradient(45deg, #ffffff, #bbdefb); 
+            color: #0d47a1; 
+            padding: 22px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            display: inline-block; 
+            margin: 30px 0; 
+            width: 85%; max-width: 400px; 
+            box-shadow: 0 10px 30px rgba(13, 71, 161, 0.2); 
+            transition: 0.4s; 
+            border: 2px solid #ffffff; 
+            font-size: 1.1em;
+            text-transform: uppercase;
+        }
+        .btn-divine:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(13, 71, 161, 0.3); background: #ffffff; }
 
-        .social-box { margin-top: 30px; display: flex; justify-content: center; gap: 20px; }
-        .btn-social { background: #1a1a1a; color: #f4d03f; padding: 12px 25px; text-decoration: none; border-radius: 30px; border: 1px solid #333; font-size: 0.9em; transition: 0.3s; }
-        .btn-social:hover { background: #333; border-color: #ffcc00; }
+        .social-box { margin-top: 20px; }
+        .btn-social { 
+            background: rgba(255, 255, 255, 0.5); 
+            color: #0d47a1; 
+            padding: 12px 35px; 
+            text-decoration: none; 
+            border-radius: 30px; 
+            border: 1px solid #ffffff; 
+            font-weight: bold;
+            transition: 0.3s; 
+        }
+        .btn-social:hover { background: #ffffff; }
 
-        .philosophy { margin: 40px auto; max-width: 600px; color: #ffffff; font-style: italic; line-height: 1.6; opacity: 0.9; padding: 0 20px; }
+        .philosophy { 
+            margin: 40px auto; max-width: 600px; 
+            color: #0d47a1; font-style: italic; 
+            line-height: 1.8; padding: 0 20px; 
+            font-size: 1.2em;
+        }
         
-        #google_translate_element { background: #1a1a1a; padding: 10px; border-bottom: 1px solid #333; }
+        #google_translate_element { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.5); }
     </style>
 </head>
-<body>
+<body onclick="playDivineSound()">
 
 <div id="google_translate_element"></div>
 
@@ -40,30 +108,58 @@
 </div>
 
 <div class="header">
-    <h1>VICTOR MILANO CANDLES</h1>
-    <p class="subtitle">L'Emozione Visiva che illumina l'Anima</p>
+    <h1>VICTOR MILANO</h1>
+    <p class="subtitle">Griglia Cristallina - Manifestazione Pura</p>
 </div>
 
 <div class="container">
     <p class="philosophy">
-        "Ogni fiamma è una frequenza, ogni profumo è un ponte tra il visibile e l'invisibile. Manifestiamo insieme la luce."
+        "Sintonizzati sulla frequenza angelica. Ogni luce è un portale, ogni vibrazione è un atto di creazione nella Griglia."
     </p>
 
-    <a href="catalogo_candele.pdf_20260309_191151_0000-compressed.pdf" target="_blank" class="btn-gold">
-        🔥 SFOGLIA IL CATALOGO DELLE FIAMME (PDF) 🔥
+    <a href="catalogo_candele.pdf_20260309_191151_0000-compressed.pdf" target="_blank" class="btn-divine">
+        ✨ SFOGLIA IL CATALOGO CELESTIALE ✨
     </a>
 
     <div class="social-box">
-        <a href="https://www.youtube.com/@CodiceSorgenteX" target="_blank" class="btn-social">📺 YouTube</a>
-        <a href="https://wa.me/393420823143" target="_blank" class="btn-social">💬 WhatsApp</a>
+        <!-- Rimosso YouTube come richiesto -->
+        <a href="https://wa.me/393420823143" target="_blank" class="btn-social">💬 WHATSAPP SACRO</a>
     </div>
 
-    <div style="margin-top: 60px; color: #444; font-size: 0.8em; letter-spacing: 1px;">
-        <p>© 2026 Victor Milano - Manifestazione Fisica</p>
+    <div style="margin-top: 80px; color: #0d47a1; font-size: 0.8em; opacity: 0.6;">
+        <p>© 2026 Victor Milano - Sincronizzazione Cristallina</p>
     </div>
 </div>
 
 <script>
+    // FUNZIONE PER IL SUONO DIVINO (Si attiva al primo click sulla pagina)
+    let soundPlayed = false;
+    function playDivineSound() {
+        if (soundPlayed) return;
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        function createTone(freq, type, duration, vol) {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(vol, audioCtx.currentTime + 1);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration);
+        }
+
+        // Accordo Celestiale (Frequenze Angeliche)
+        createTone(528, 'sine', 6, 0.1); // 528Hz Miracolo
+        createTone(396, 'sine', 6, 0.1); // Liberazione
+        createTone(741, 'sine', 6, 0.05); // Risveglio intuito
+        
+        soundPlayed = true;
+    }
+
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'it'}, 'google_translate_element');
     }
