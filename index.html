@@ -1,11 +1,11 @@
-                        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Milano | Manifestazione Cristallina</title>
+    <title>Victor Milano | Griglia Cristallina</title>
     <style>
-        /* SFONDO PROFESSIONALE 'ETHERAL MESH' */
+        /* SFONDO PROFESSIONALE ETEREO */
         body { 
             background: #e3f2fd;
             background: radial-gradient(at 0% 0%, #bbdefb 0px, transparent 50%),
@@ -19,60 +19,56 @@
             font-family: 'Optima', 'Georgia', serif; 
             text-align: center; 
             margin: 0; padding: 0; 
-            overflow-x: hidden; 
+            overflow: hidden;
         }
 
-        /* GRIGLIA CRISTALLINA SOFFUSA */
-        body::before {
-            content: "";
+        #brillantini {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background-image: 
-                linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
-            background-size: 60px 60px;
-            z-index: -1;
-            opacity: 0.5;
-        }
-        
-        /* FIAMMA SACRA MINIMALISTA */
-        .welcome-flame { padding: 60px 0 30px 0; }
-        .flame { 
-            width: 20px; height: 32px; 
-            background: #ffffff;
-            border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
-            margin: 0 auto; 
-            box-shadow: 0 0 50px 20px rgba(255, 255, 255, 1); 
-            animation: divine-breath 3s infinite ease-in-out; 
-        }
-        @keyframes divine-breath { 
-            0%, 100% { transform: scale(1); filter: blur(2px); opacity: 0.7; }
-            50% { transform: scale(1.15); filter: blur(0px); opacity: 1; }
-        }
-        .candle-base { 
-            width: 2px; height: 40px; 
-            background: rgba(13, 71, 161, 0.2); 
-            margin: 10px auto; 
+            z-index: 0;
+            pointer-events: none;
         }
 
-        .header h1 { 
-            font-size: 2.5em; letter-spacing: 8px; 
-            font-weight: 300; text-transform: uppercase; 
-            color: #0d47a1; margin-bottom: 5px;
+        /* LA FIAMMA CHE SI ACCENDE E SPEGNE */
+        .welcome-flame { padding: 60px 0 30px 0; position: relative; z-index: 2; }
+        .flame { 
+            width: 18px; height: 30px; 
+            background: #ffffff;
+            border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+            margin: 0 auto; 
+            /* Animazione potenziata: scala e opacità estrema */
+            animation: flame-pulse 3s infinite ease-in-out; 
+            filter: blur(1px);
         }
-        .subtitle { 
-            letter-spacing: 2px; text-transform: uppercase; 
-            font-size: 0.8em; color: #1565c0; opacity: 0.7; 
+
+        @keyframes flame-pulse { 
+            0%, 100% { 
+                transform: scale(0.2); 
+                opacity: 0.1; 
+                box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.2);
+            }
+            50% { 
+                transform: scale(1.2); 
+                opacity: 1; 
+                box-shadow: 0 0 60px 25px rgba(255, 255, 255, 1);
+            }
         }
-        
+
+        .candle-base { 
+            width: 2px; height: 35px; 
+            background: rgba(13, 71, 161, 0.15); 
+            margin: 8px auto; 
+        }
+
+        .content-wrapper { position: relative; z-index: 1; height: 100vh; overflow-y: auto; }
+        .header h1 { font-size: 2.2em; letter-spacing: 8px; font-weight: 300; text-transform: uppercase; color: #0d47a1; }
         .container { padding: 40px 20px; max-width: 800px; margin: auto; }
 
-        /* BOX EFFETTO CRISTALLO (Glassmorphism) */
         .glass-card {
             background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border-radius: 30px;
             padding: 40px 20px;
             border: 1px solid rgba(255, 255, 255, 0.6);
@@ -80,88 +76,93 @@
         }
         
         .btn-divine { 
-            background: #0d47a1; 
-            color: #ffffff; 
-            padding: 20px 40px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 50px; 
-            display: inline-block; 
-            margin: 20px 0; 
-            width: 80%; max-width: 350px; 
-            box-shadow: 0 10px 30px rgba(13, 71, 161, 0.3); 
-            transition: 0.5s; 
+            background: #0d47a1; color: #ffffff; padding: 20px 40px; 
+            text-decoration: none; font-weight: bold; border-radius: 50px; 
+            display: inline-block; margin: 20px 0; width: 80%; max-width: 350px; 
+            box-shadow: 0 10px 30px rgba(13, 71, 161, 0.3); transition: 0.5s; 
             letter-spacing: 2px;
         }
-        .btn-divine:hover { 
-            transform: scale(1.03); 
-            box-shadow: 0 15px 45px rgba(13, 71, 161, 0.4);
-            background: #1565c0;
-        }
 
-        .btn-whatsapp {
-            display: inline-block;
-            margin-top: 25px;
-            color: #0d47a1;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9em;
-            border-bottom: 1px solid #0d47a1;
-            padding-bottom: 5px;
-            transition: 0.3s;
-        }
-        .btn-whatsapp:hover { opacity: 0.6; }
-
-        .philosophy { 
-            color: #0d47a1; line-height: 2; 
-            margin-bottom: 30px; font-size: 1.1em;
-        }
-        
         #google_translate_element { padding: 15px; }
     </style>
 </head>
 <body onclick="playDivineSound()">
 
-<div id="google_translate_element"></div>
+<canvas id="brillantini"></canvas>
 
-<div class="welcome-flame">
-    <div class="flame"></div>
-    <div class="candle-base"></div>
-</div>
+<div class="content-wrapper">
+    <div id="google_translate_element"></div>
 
-<div class="header">
-    <h1>VICTOR MILANO</h1>
-    <p class="subtitle">Griglia Cristallina & Manifestazione</p>
-</div>
-
-<div class="container">
-    <div class="glass-card">
-        <p class="philosophy">
-            <i>"Ogni fiamma è un portale verso la Griglia Cristallina. Sintonizzati sulla frequenza della pura creazione."</i>
-        </p>
-
-        <a href="catalogo_candele.pdf_20260309_191151_0000-compressed.pdf" target="_blank" class="btn-divine">
-            SFOGLIA IL CATALOGO
-        </a>
-
-        <br>
-        <a href="https://wa.me/393420823143" class="btn-whatsapp">CONTATTO WHATSAPP</a>
+    <div class="welcome-flame">
+        <div class="flame"></div>
+        <div class="candle-base"></div>
     </div>
 
-    <div style="margin-top: 60px; color: #0d47a1; font-size: 0.7em; opacity: 0.5; letter-spacing: 2px;">
-        <p>© 2026 VICTOR MILANO - MILANO - ITALY</p>
+    <div class="header">
+        <h1>VICTOR MILANO</h1>
+        <p style="letter-spacing: 3px; font-size: 0.7em; opacity: 0.6;">GRIGLIA CRISTALLINA</p>
+    </div>
+
+    <div class="container">
+        <div class="glass-card">
+            <p style="color: #0d47a1; font-style: italic; font-size: 1.1em; line-height: 1.8;">
+                "La fiamma della coscienza non si spegne mai, cambia solo frequenza."
+            </p>
+
+            <a href="catalogo_candele.pdf_20260309_191151_0000-compressed.pdf" target="_blank" class="btn-divine">
+                SFOGLIA IL CATALOGO
+            </a>
+
+            <br>
+            <a href="https://wa.me/393420823143" style="display:inline-block; margin-top:25px; color:#0d47a1; font-weight:bold; text-decoration:none; border-bottom:1px solid #0d47a1;">CONTATTO WHATSAPP</a>
+        </div>
     </div>
 </div>
 
 <script>
+    // --- LOGICA BRILLANTINI (Diamanti di luce) ---
+    const canvas = document.getElementById('brillantini');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height + Math.random() * 100;
+            this.size = Math.random() * 2 + 0.5;
+            this.speed = Math.random() * 0.8 + 0.3;
+            this.opacity = Math.random() * 0.5 + 0.2;
+        }
+        update() {
+            this.y -= this.speed;
+            if (this.y < -10) { this.y = canvas.height + 10; this.x = Math.random() * canvas.width; }
+        }
+        draw() {
+            ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+    for (let i = 0; i < 40; i++) particles.push(new Particle());
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    // --- LOGICA SUONO DIVINO ---
     let soundPlayed = false;
     function playDivineSound() {
         if (soundPlayed) return;
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        function createTone(freq, type, duration, vol) {
+        function createTone(freq, duration, vol) {
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
-            osc.type = type;
             osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
             gain.gain.setValueAtTime(0, audioCtx.currentTime);
             gain.gain.linearRampToValueAtTime(vol, audioCtx.currentTime + 1);
@@ -169,9 +170,7 @@
             osc.connect(gain); gain.connect(audioCtx.destination);
             osc.start(); osc.stop(audioCtx.currentTime + duration);
         }
-        // Frequenze sacre 528Hz e 432Hz
-        createTone(528, 'sine', 8, 0.08);
-        createTone(432, 'sine', 8, 0.08);
+        createTone(528, 8, 0.08); // Solfeggio 528Hz
         soundPlayed = true;
     }
 
@@ -183,4 +182,3 @@
 
 </body>
 </html>
- 
